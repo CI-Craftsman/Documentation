@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Commands - Craftsman</title>
+      
+      
+      
+        <link rel="canonical" href="https://github.com/CI-Craftsman/CLI/commands/">
+      
+      
+        <meta name="author" content="David Sosa Valdes">
+      
+    
+    <meta property="og:url" content="https://github.com/CI-Craftsman/CLI/commands/">
+    <meta property="og:title" content="Craftsman">
+    <meta property="og:image" content="https://github.com/CI-Craftsman/CLI/commands//../">
+    <meta name="apple-mobile-web-app-title" content="Craftsman">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+      <style>
+        body, input {
+          font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-red ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Commands
+      </div>
+    </div>
+    
+      
+      <div class="button button-twitter" role="button" aria-label="Twitter">
+        <a href="https://twitter.com/itsdsv" title="@itsdsv on Twitter" target="_blank" class="toggle-button icon icon-twitter"></a>
+      </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/davidsosavaldes" title="@davidsosavaldes on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/CI-Craftsman/CLI" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Craftsman
+          <span class="version">
+            4.1.0
+          </span>
+        </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="..">
+      Home
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Installation" href="../installation/">
+      Installation
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Usage" href="../usage/">
+      Usage
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Commands" href="./">
+      Commands
+    </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Generators" href="#generators">
+                Generators
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Migrations" href="#migrations">
+                Migrations
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Seeders" href="#seeders">
+                Seeders
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Extra" href="../extra/">
+      Extra
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+              
+              <li>
+                <a href="https://twitter.com/itsdsv" target="_blank" title="@itsdsv on Twitter">
+                  @itsdsv on Twitter
+                </a>
+              </li>
+            
+            
+              
+              <li>
+                <a href="https://github.com/davidsosavaldes" target="_blank" title="@davidsosavaldes on GitHub">
+                  @davidsosavaldes on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Commands</h1>
+          
+          <h2 id="generators">Generators</h2>
+<p>Craftsman provides a variety of generators to speed up your development process.</p>
+<!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
+
+    php craftsman generate:<command> <args> --path="path/to/new" -->
+
+<h3 id="controller">Controller</h3>
+<p>Generate a controller with:</p>
+<div class="code"><pre><span></span>php craftsman generate:controller &lt;name&gt;
+</pre></div>
+
+
+<p>Output:</p>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">CI_Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Display a listing of the resource.</span>
+<span class="sd">     * GET /Foo</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Display the specified resource.</span>
+<span class="sd">     * GET /Foo/get/{id}</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  int  $id</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>   
+
+    <span class="sd">/**</span>
+<span class="sd">     * Show the form for creating a new resource.</span>
+<span class="sd">     * GET /Foo/create</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Store a newly created resource in storage.</span>
+<span class="sd">     * POST /Foo/store</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Show the form for editing the specified resource.</span>
+<span class="sd">     * GET /Foo/edit/{id}</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  int  $id</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">edit</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>   
+
+    <span class="sd">/**</span>
+<span class="sd">     * Update the specified resource in storage.</span>
+<span class="sd">     * PUT /Foo/update/{id}</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  int  $id</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Remove the specified resource from storage.</span>
+<span class="sd">     * DELETE /Foo/delete/{id}</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  int  $id</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* End of file Foo.php */</span>
+<span class="cm">/* Location: /path/to/application/controllers/Foo.php */</span>  
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<h3 id="model">Model</h3>
+<p>Generate a model with:</p>
+<div class="code"><pre><span></span>php craftsman generate:model &lt;name&gt;
+</pre></div>
+
+
+<p>Output:</p>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">Foo_model</span> <span class="k">extends</span> <span class="nx">CI_Model</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>    
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* End of file Foo_model.php */</span>
+<span class="cm">/* Location: /path/to/application/models/Foo_model.php */</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<h3 id="migration">Migration</h3>
+<p>Generate a migration with:</p>
+<div class="code"><pre><span></span>php craftsman generate:migration &lt;name&gt;
+</pre></div>
+
+
+<p>Regardless of which style you choose to use, the generator command will prefix your files with the migration number. For example:</p>
+<ul>
+<li>001_add_blog.php (sequential)</li>
+<li>20121031100537_add_blog.php (timestamp)    </li>
+</ul>
+<p>If the file name is prefixed with <code>create_</code> or <code>modify_</code>, then a migration containing the appropriate <code>add_column</code> and <code>update_column</code> statements will be created.</p>
+<p><strong>Example</strong></p>
+<div class="code"><pre><span></span>php craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
+</pre></div>
+
+
+<p>Output:</p>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">Migration_create_users</span> <span class="k">extends</span> <span class="nx">CI_Migration</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">create_users_table</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;ci_users&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">create_users_table</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_field</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;lastname&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+            <span class="p">),</span>
+            <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SMALLINT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+            <span class="p">),</span>
+        <span class="p">));</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_table</span><span class="p">(</span><span class="s1">&#39;ci_users&#39;</span><span class="p">,</span><span class="k">TRUE</span><span class="p">);</span>      
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* End of file 001_create_users.php.php */</span>
+<span class="cm">/* Location: path/to/application/migrations/001_create_users.php */</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>Now it's your turn to give the finishing touches before running this scheme. Check the <a href="https://codeigniter.com/user_guide/database/forge.html">Database Forge documentation</a> for more information about Codeigniter Migrations.</p>
+<hr />
+<h2 id="migrations">Migrations</h2>
+<p>Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.</p>
+<div class="admonition note">
+<p class="admonition-title">Database Settings</p>
+<p>If you're going to use Migration Commands you should configure your <code>application/config/database.php</code> settings needed to access to your database.</p>
+</div>
+<h3 id="file-names">File names</h3>
+<p>Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:</p>
+<ul>
+<li><strong>Sequential</strong>: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.</li>
+<li><strong>Timestamp</strong>: each migration is enumerated with a timestamp, in <code>YYYYMMDDHHIISS</code> format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.</li>
+</ul>
+<p>By default Craftsman uses the sequential style but you can change it using the <code>--timestamp</code> argument.</p>
+<h3 id="displaying-info">Displaying info</h3>
+<p>You can display the current migration status with the command:</p>
+<div class="code"><pre><span></span>php craftsman migrate:check
+</pre></div>
+
+
+<p>Output:</p>
+<div class="code"><pre><span></span>(in ~/workspace/codeigniter/application/)
+
+----------- ----------- ---------------- ------------------
+ Name        Type        Local version    Database version  
+----------- ----------- ---------------- ------------------
+ ci_system   timestamp   20161106010705   20161106010705    
+----------- ----------- ---------------- ------------------
+
+Migration directory: migrations/
+
+[OK] Database is up-to-date.    
+</pre></div>
+
+
+<p>Where:</p>
+<ul>
+<li><strong>Name</strong>: migration name version.</li>
+<li><strong>Database version</strong>: version actually stored in your database.</li>
+<li><strong>Local version</strong>: latest migration file version founded in the migration directory.</li>
+<li><strong>Type</strong>: the migration version type.</li>
+</ul>
+<p>Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:</p>
+<div class="code"><pre><span></span>! [NOTE] The Database is not up-to-date with the latest changes, run:&#39;migrate:latest&#39; to update them.
+</pre></div>
+
+
+<h3 id="running-migrations">Running migrations</h3>
+<p>Migrations are designed to be mostly automatic, but you'll need to know when to make migrations and when to run them. Here's a list of possible options.</p>
+<p>Each migration command shows relevant information about the db scheme changes using the <code>--debug</code> argument.</p>
+<p><strong>Latest</strong></p>
+<p>Migrate to the latest version, the migration class will use the very newest migration found in the <em>Filesystem</em>.</p>
+<div class="code"><pre><span></span>php craftsman migrate:latest
+</pre></div>
+
+
+<p><strong>Version</strong></p>
+<p>Version can be used to roll back changes or step forwards pro-grammatically to specific versions.</p>
+<div class="code"><pre><span></span>php craftsman migrate:version &lt;number&gt;
+</pre></div>
+
+
+<h3 id="rolling-back-migrations">Rolling-back migrations</h3>
+<p>Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.</p>
+<p><strong>Rollback the last migration operation</strong></p>
+<div class="code"><pre><span></span>php craftsman migrate:rollback
+</pre></div>
+
+
+<p><strong>Rollback all migrations</strong></p>
+<div class="code"><pre><span></span>php craftsman migrate:reset
+</pre></div>
+
+
+<p><strong>Rollback all migrations and run them all again</strong></p>
+<div class="code"><pre><span></span>php craftsman migrate:refresh
+</pre></div>
+
+
+<hr />
+<h2 id="seeders">Seeders</h2>
+<p>Craftsman comes with a simple method of seeding your database with test data using seed classes. All seed classes are stored by default in your <code>path/to/application/seeders</code> folder. Seed classes may have any name you wish, but probably should follow the <a href="https://codeigniter.com/userguide3/general/styleguide.html">CodeIgniter Style Guide</a>.</p>
+<p>To generate a seeder:</p>
+<div class="code"><pre><span></span>php craftsman generate:seeder &lt;name&gt;
+</pre></div>
+
+
+<p>A seeder class only contains the <code>run()</code> method by default. This method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. You may use the <a href="https://codeigniter.com/user_guide/query_builder.html">Query Builder Class</a> to manually insert data.</p>
+<p>Example</p>
+<p>Add a database insert statement to the run method:</p>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+
+<span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="k">implements</span> <span class="nx">\Craftsman\Interfaces\Seeder</span>
+<span class="p">{</span>
+  <span class="k">private</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;ci_foo&#39;</span><span class="p">;</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+  <span class="p">{</span>   
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title 1&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Name 1&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">)</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* End of file Foo.php */</span>
+<span class="cm">/* Location: /path/to/application/seeders/Foo.php */</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>One you have written your seeder class, you may use the command:</p>
+<div class="code"><pre><span></span>php craftsman db:seed &lt;name&gt;
+</pre></div>
+
+
+<hr />
+          <aside class="copyright" role="note">
+            
+              Copyright (c) 2016 David Sosa Valdes &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../usage/" title="Usage">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Usage
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../extra/" title="Extra">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Extra
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>
