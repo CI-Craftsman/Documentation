@@ -201,8 +201,8 @@ Now it's your turn to give the finishing touches before running this scheme. Che
 
 Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.
 
-!!! note "Database Settings"
-    If you're going to use Migration Commands you should configure your `application/config/database.php` settings needed to access to your database.
+!!! warning "Database Connection Required"
+    If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.
 
 ### File names
 
