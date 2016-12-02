@@ -1,6 +1,6 @@
 # Installation
 
-Add the **bin-dir** path inside your ```composer.json``` file:
+Config the **bin-dir** path inside your ```composer.json``` file:
 
 ```json
 "config": {
@@ -10,17 +10,17 @@ Add the **bin-dir** path inside your ```composer.json``` file:
 
 Next, install the package with composer:
 
-	composer require dsv/craftsman
+	composer require craftsman/cli
 
 Install the environment variables:
 
-    cp path/to/vendor/craftsman/utilis/.env.example .env
+    cp path/to/vendor/craftsman/utils/.env.example .env
 
 If you configure the bin directory you can run the command like this:
 
     php bin/craftsman
 
-If you don't, this package should be listed as a vendor binary:
+If you don't, Craftsman should be listed as a vendor binary:
 
     php path/to/vendor/bin/craftsman
 
