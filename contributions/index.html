@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Resources - Craftsman</title>
+        <title>Contributions - Craftsman</title>
       
       
       
-        <link rel="canonical" href="https://ci-craftsman.github.io/documentation/extra/">
+        <link rel="canonical" href="https://ci-craftsman.github.io/documentation/contributions/">
       
       
         <meta name="author" content="David Sosa Valdes">
       
     
-    <meta property="og:url" content="https://ci-craftsman.github.io/documentation/extra/">
+    <meta property="og:url" content="https://ci-craftsman.github.io/documentation/contributions/">
     <meta property="og:title" content="Craftsman">
-    <meta property="og:image" content="https://ci-craftsman.github.io/documentation/extra//../images/noun_411791_cc.svg">
+    <meta property="og:image" content="https://ci-craftsman.github.io/documentation/contributions//../images/noun_411791_cc.svg">
     <meta name="apple-mobile-web-app-title" content="Craftsman">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -98,7 +98,7 @@
             
           </span>
         
-        Resources
+        Contributions
       </div>
     </div>
     
@@ -218,8 +218,17 @@
           
             
   <li>
-    <a class="current" title="Resources" href="./">
+    <a class="" title="Resources" href="../extra/">
       Resources
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Contributions" href="./">
+      Contributions
     </a>
     
       
@@ -227,22 +236,19 @@
         <ul>
           
             <li class="anchor">
-              <a title="Modular Migrations" href="#modular-migrations">
-                Modular Migrations
+              <a title="Reporting an Issue" href="#reporting-an-issue">
+                Reporting an Issue
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Submitting Pull Requests" href="#submitting-pull-requests">
+                Submitting Pull Requests
               </a>
             </li>
           
         </ul>
       
-    
-  </li>
-
-          
-            
-  <li>
-    <a class="" title="Contributions" href="../contributions/">
-      Contributions
-    </a>
     
   </li>
 
@@ -278,51 +284,22 @@
       <article class="article">
         <div class="wrapper">
           
-            <h1>Resources</h1>
+            <h1>Contributions</h1>
           
-          <h2 id="modular-migrations">Modular Migrations<a class="headerlink" href="#modular-migrations" title="Permanent link">#</a></h2>
-<p>If you're familiar with the <a href="https://codeigniter.com/user_guide/libraries/migration.html">Codeigniter Migration Class</a>, it is impossible to maintain separated migration files in your application, you need to merge these files in one directory and update the migration file name. With Craftsman you can manage your database scheme's evolution through independent versions.</p>
-<p>For this example we will assume the following directory structure:</p>
-<div class="code"><pre><span></span>+- APPPATH/
-| +- migrations/
-| | +- 001_add_blog.php
-| | +- 002_add_posts.php
-</pre></div>
+          <p>This project welcomes and depends on contributions from all <a href="https://codeigniter.com/community">Codeigniter Developers</a>.</p>
+<p>Contributions can be made in a number of ways, a few examples are:</p>
+<ul>
+<li>Code patches via pull requests</li>
+<li>Documentation improvements</li>
+<li>Bug reports and patch reviews</li>
+</ul>
+<h3 id="reporting-an-issue">Reporting an Issue<a class="headerlink" href="#reporting-an-issue" title="Permanent link">#</a></h3>
+<p>Please include as much detail as you can. Let us know your platform and Craftsman CLI versions. If the problem is visual (for example: a generator design issue, etc.) please add a screenshot and if you get an error please include the the full traceback.</p>
+<h3 id="submitting-pull-requests">Submitting Pull Requests<a class="headerlink" href="#submitting-pull-requests" title="Permanent link">#</a></h3>
+<p>Once you are happy with your changes or you are ready for some feedback, push it to your fork and send a pull request. For a change to be accepted it will most likely need to have tests and documentation if it is a new feature.</p>
+<!-- Creating a command
 
-
-<p>A library could use a database scheme like <a href="http://benedmunds.com/ion_auth/">Ion Auth</a>, <a href="http://community-auth.com/">Community Auth</a>, etc. Here's an example:</p>
-<div class="code"><pre><span></span>+- APPPATH
-| +- libraries/
-| | +- fooLib/
-| | | +- migrations
-| | | | +- 001_add_session.php
-| | | | +- 002_add_other_stuff.php
-</pre></div>
-
-
-<p>In order to run this migrations, include the <code>--path</code> argument:</p>
-<div class="code"><pre><span></span>php vendor/bin/craftsman migrate:latest --path=&quot;application/libraries/fooLib&quot;
-</pre></div>
-
-
-<p>And your migrations are now independent. In your database you can see that every module have an assigned version:</p>
-<div class="code"><pre><span></span>mysql&gt; SELECT * FROM ci_migrations;
-
-+---------------+---------+
-| module        | version |
-+---------------+---------+
-| ci_system     |       2 |
-| foolib        |       2 |
-+---------------+---------+
-</pre></div>
-
-
-<p>Also you can change the module name in the database with the <code>--name</code> argument:</p>
-<div class="code"><pre><span></span>php vendor/bin/craftsman migrate:latest --name=&quot;foo&quot; --path=&quot;application/libraries/fooLib&quot;
-</pre></div>
-
-
-<hr />
+Check the User Guide that supports this subject and once you are ready for some feedback let us know with an issue or email. Please include all your personal information so that we can make the appropriate acknowledgments on this page. -->
           <aside class="copyright" role="note">
             
               Copyright (c) 2016 David Sosa Valdes 
@@ -343,7 +320,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../commands/" title="Commands">
+        <a href="../extra/" title="Resources">
           <span class="direction">
             Previous
           </span>
@@ -353,7 +330,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Commands
+                Resources
               </div>
             </div>
           </div>
@@ -361,22 +338,6 @@
       
     </div>
     <div class="next">
-      
-        <a href="../contributions/" title="Contributions">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
-                Contributions
-              </div>
-            </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
-            </div>
-          </div>
-        </a>
       
     </div>
   </nav>
