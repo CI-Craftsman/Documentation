@@ -22,12 +22,12 @@
         }, 
         {
             "location": "/installation/", 
-            "text": "Installation\n#\n\n\nConfig the \nbin-dir\n path inside your \ncomposer.json\n file:\n\n\nconfig\n:\n \n{\n\n    \nbin-dir\n:\n \nbin\n\n\n}\n\n\n\n\n\n\nNext, install the package with composer:\n\n\ncomposer require craftsman/cli\n\n\n\n\n\nInstall the environment variables:\n\n\ncp path/to/vendor/craftsman/.craftsman.example .craftsman\n\n\n\n\n\nIf you configure the bin directory you can run the command like this:\n\n\nphp bin/craftsman\n\n\n\n\n\nIf you don't, Craftsman should be listed as a vendor binary:\n\n\nphp path/to/vendor/bin/craftsman", 
+            "text": "Installation\n#\n\n\nConfig the \nbin-dir\n path inside your \ncomposer.json\n file:\n\n\nconfig\n:\n \n{\n\n    \nbin-dir\n:\n \nbin\n\n\n}\n\n\n\n\n\n\nNext, install the package with composer:\n\n\ncomposer require craftsman/cli\n\n\n\n\n\nInstall the environment variables:\n\n\ncp path/to/vendor/craftsman/cli/.craftsman.example .craftsman\n\n\n\n\n\nIf you configure the bin directory you can run the command like this:\n\n\nphp bin/craftsman\n\n\n\n\n\nIf you don't, Craftsman should be listed as a vendor binary:\n\n\nphp path/to/vendor/bin/craftsman", 
             "title": "Installation"
         }, 
         {
             "location": "/installation/#installation", 
-            "text": "Config the  bin-dir  path inside your  composer.json  file:  config :   { \n     bin-dir :   bin  }   Next, install the package with composer:  composer require craftsman/cli  Install the environment variables:  cp path/to/vendor/craftsman/.craftsman.example .craftsman  If you configure the bin directory you can run the command like this:  php bin/craftsman  If you don't, Craftsman should be listed as a vendor binary:  php path/to/vendor/bin/craftsman", 
+            "text": "Config the  bin-dir  path inside your  composer.json  file:  config :   { \n     bin-dir :   bin  }   Next, install the package with composer:  composer require craftsman/cli  Install the environment variables:  cp path/to/vendor/craftsman/cli/.craftsman.example .craftsman  If you configure the bin directory you can run the command like this:  php bin/craftsman  If you don't, Craftsman should be listed as a vendor binary:  php path/to/vendor/bin/craftsman", 
             "title": "Installation"
         }, 
         {
