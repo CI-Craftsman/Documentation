@@ -72,7 +72,7 @@
   
   
   
-  <body class="palette-primary-teal palette-accent-teal">
+  <body class="palette-primary-red palette-accent-cyan">
     
       
       
@@ -296,11 +296,11 @@
 <p>Craftsman provides a variety of generators to speed up your development process.</p>
 <!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
 
-    php bin/craftsman generate:<command> <args> --path="path/to/new" -->
+    php craftsman generate:<command> <args> --path="path/to/new" -->
 
 <h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permanent link">#</a></h3>
 <p>Generate a controller</p>
-<div class="code"><pre><span></span>php bin/craftsman generate:controller &lt;name&gt;
+<div class="code"><pre><span></span>php craftsman generate:controller &lt;name&gt;
 </pre></div>
 
 
@@ -382,7 +382,7 @@
 
 <h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">#</a></h3>
 <p>Generate a model</p>
-<div class="code"><pre><span></span>php bin/craftsman generate:model &lt;name&gt;
+<div class="code"><pre><span></span>php craftsman generate:model &lt;name&gt;
 </pre></div>
 
 
@@ -406,7 +406,7 @@
 
 <h3 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">#</a></h3>
 <p>Generate a migration</p>
-<div class="code"><pre><span></span>php bin/craftsman generate:migration &lt;name&gt;
+<div class="code"><pre><span></span>php craftsman generate:migration &lt;name&gt;
 </pre></div>
 
 
@@ -417,7 +417,7 @@
 </ul>
 <h4 id="name-prefixes">Name prefixes<a class="headerlink" href="#name-prefixes" title="Permanent link">#</a></h4>
 <p>Use the prefix <code>create_</code> or <code>modify_</code> if you want to create a migration with the appropriate <code>add_column</code> and <code>update_column</code> statements. Here's an example:</p>
-<div class="code"><pre><span></span>php bin/craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
+<div class="code"><pre><span></span>php craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
 </pre></div>
 
 
@@ -499,7 +499,7 @@
 <p>By default Craftsman uses the sequential style but you can change it using the <code>--timestamp</code> argument.</p>
 <h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">#</a></h3>
 <p>You can display the current migration status with the command:</p>
-<div class="code"><pre><span></span>php bin/craftsman migrate:check
+<div class="code"><pre><span></span>php craftsman migrate:check
 </pre></div>
 
 
@@ -527,30 +527,30 @@ Migration directory: migrations/
 <p>Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.</p>
 <p><strong>Latest</strong></p>
 <p>Allows you to migrate the latest version, the migration class will use the very newest migration found in the <em>Filesystem</em>.</p>
-<div class="code"><pre><span></span>php bin/craftsman migrate:latest
+<div class="code"><pre><span></span>php craftsman migrate:latest
 </pre></div>
 
 
 <p><strong>Version</strong></p>
 <p>Allows you to roll back changes or step forwards pro-grammatically to specific versions.</p>
-<div class="code"><pre><span></span>php bin/craftsman migrate:version &lt;number&gt;
+<div class="code"><pre><span></span>php craftsman migrate:version &lt;number&gt;
 </pre></div>
 
 
 <h3 id="rolling-back">Rolling-back<a class="headerlink" href="#rolling-back" title="Permanent link">#</a></h3>
 <p>Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.</p>
 <h4 id="rollback-the-last-migration">Rollback the last migration<a class="headerlink" href="#rollback-the-last-migration" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php bin/craftsman migrate:rollback
+<div class="code"><pre><span></span>php craftsman migrate:rollback
 </pre></div>
 
 
 <h4 id="rollback-all-migrations">Rollback all migrations<a class="headerlink" href="#rollback-all-migrations" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php bin/craftsman migrate:reset
+<div class="code"><pre><span></span>php craftsman migrate:reset
 </pre></div>
 
 
 <h4 id="rollback-all-migrations-and-run-them-all-again">Rollback all migrations and run them all again<a class="headerlink" href="#rollback-all-migrations-and-run-them-all-again" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php bin/craftsman migrate:refresh
+<div class="code"><pre><span></span>php craftsman migrate:refresh
 </pre></div>
 
 
@@ -558,7 +558,7 @@ Migration directory: migrations/
 <h2 id="seeders">Seeders<a class="headerlink" href="#seeders" title="Permanent link">#</a></h2>
 <p>Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the <a href="https://codeigniter.com/userguide3/general/styleguide.html">CodeIgniter Style Guide</a>. All seed classes are stored by default in your <code>path/to/application/seeders</code> folder.</p>
 <p>To generate a seeder:</p>
-<div class="code"><pre><span></span>php bin/craftsman generate:seeder &lt;name&gt;
+<div class="code"><pre><span></span>php craftsman generate:seeder &lt;name&gt;
 </pre></div>
 
 
@@ -589,7 +589,7 @@ Migration directory: migrations/
 
 
 <p>One you have written your seeder class, you may use the command:</p>
-<div class="code"><pre><span></span>php bin/craftsman db:seed &lt;name&gt;
+<div class="code"><pre><span></span>php craftsman db:seed &lt;name&gt;
 </pre></div>
 
 
