@@ -4,13 +4,13 @@ Craftsman provides a variety of generators to speed up your development process.
 
 <!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
 
-    php bin/craftsman generate:<command> <args> --path="path/to/new" -->
+    php craftsman generate:<command> <args> --path="path/to/new" -->
 
 ### Controller
 
 Generate a controller
 
-    php bin/craftsman generate:controller <name>
+    php craftsman generate:controller <name>
 
 Output:
 
@@ -93,7 +93,7 @@ class Foo extends CI_Controller
 
 Generate a model
 
-    php bin/craftsman generate:model <name>
+    php craftsman generate:model <name>
 
 Output:
 
@@ -118,7 +118,7 @@ class Foo_model extends CI_Model
 
 Generate a migration
 
-    php bin/craftsman generate:migration <name>
+    php craftsman generate:migration <name>
 
 Regardless of which style you choose to use, the generator command will prefix your files with the migration number. For example:
 
@@ -129,7 +129,7 @@ Regardless of which style you choose to use, the generator command will prefix y
 
 Use the prefix `create_` or `modify_` if you want to create a migration with the appropriate `add_column` and `update_column` statements. Here's an example:
 
-    php bin/craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
+    php craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
 
 Output:
 
@@ -217,7 +217,7 @@ By default Craftsman uses the sequential style but you can change it using the `
 
 You can display the current migration status with the command:
 
-	php bin/craftsman migrate:check
+	php craftsman migrate:check
 
 Output:
 
@@ -247,13 +247,13 @@ Each migration command shows relevant information about the db scheme changes by
 
 Allows you to migrate the latest version, the migration class will use the very newest migration found in the *Filesystem*.
 
-	php bin/craftsman migrate:latest
+	php craftsman migrate:latest
 
 **Version**
 
 Allows you to roll back changes or step forwards pro-grammatically to specific versions.
 
-	php bin/craftsman migrate:version <number>
+	php craftsman migrate:version <number>
 
 ### Rolling-back
 
@@ -261,15 +261,15 @@ Allows you to quickly roll back and forth through the history of the migration s
 
 #### Rollback the last migration
 
-	php bin/craftsman migrate:rollback
+	php craftsman migrate:rollback
 
 #### Rollback all migrations
 
-	php bin/craftsman migrate:reset
+	php craftsman migrate:reset
 
 #### Rollback all migrations and run them all again
 
-	php bin/craftsman migrate:refresh
+	php craftsman migrate:refresh
 
 ---
 
@@ -279,7 +279,7 @@ Craftsman comes with a simple method of seeding your database. Seeders may have 
 
 To generate a seeder:
 
-    php bin/craftsman generate:seeder <name>
+    php craftsman generate:seeder <name>
 
 A seeder class only contains the `run()` method by default, this method is called when the `db:seed` command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:
 
@@ -312,7 +312,7 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 
 One you have written your seeder class, you may use the command:
 
-    php bin/craftsman db:seed <name>
+    php craftsman db:seed <name>
 
 Check the [Query Builder Class](https://codeigniter.com/user_guide/query_builder.html) to manually insert data.
 

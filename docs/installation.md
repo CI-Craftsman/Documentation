@@ -14,7 +14,7 @@ Next, install the package with composer:
 
 Install the environment variables:
 
-    cp path/to/vendor/craftsman/utils/.env.example .env
+    cp path/to/vendor/craftsman/.craftsman.example .craftsman
 
 If you configure the bin directory you can run the command like this:
 

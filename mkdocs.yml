@@ -25,8 +25,8 @@ extra:
     github: davidsosavaldes
     twitter: itsdsv
   palette:
-    primary: 'teal'
-    accent: 'teal'    
+    primary: 'red'
+    accent: 'cyan'    
   font:
     text: 'Roboto'
     code: 'Roboto Mono'  

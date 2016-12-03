@@ -20,7 +20,7 @@ A library could use a database scheme like [Ion Auth](http://benedmunds.com/ion_
 
 In order to run this migrations, include the `--path` argument:
 
-    php vendor/bin/craftsman migrate:latest --path="application/libraries/fooLib"
+    php craftsman migrate:latest --path="application/libraries/fooLib"
 
 And your migrations are now independent. In your database you can see that every module have an assigned version:
 
@@ -35,6 +35,6 @@ And your migrations are now independent. In your database you can see that every
 
 Also you can change the module name in the database with the `--name` argument:
 
-    php vendor/bin/craftsman migrate:latest --name="foo" --path="application/libraries/fooLib"
+    php craftsman migrate:latest --name="foo" --path="application/libraries/fooLib"
 
 ---
