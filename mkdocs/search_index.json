@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n#\n\n\nProvides a number of helpful commands for your use while developing your application.\n\n\nFeatures\n#\n\n\nBuilt on top of great technology.\n\n\n\n\nSolid Base: Built with \nSymfony Console component\n.\n\n\nGenerators: Generate boilerplate code for a rapid application development.\n\n\nModular Migrations: Manage your database scheme's evolution through independent versions.\n\n\nSeeders: Easily fill your database with test data after it's created.\n\n\nTest environment: Test your application with ease without installing a web server.\n\n\nInteractive: Every command also includes a help screen which describes available options.\n\n\n\n\nDemo\n#", 
+            "text": "Overview\n#\n\n\nCraftsman is a command line interface that provides a set of commands that will help you when you're developing your \nCodeigniter\n application, in addition to make your job easier.\n\n\nFeatures\n#\n\n\nBuilt on top of great technology.\n\n\n\n\nSolid Base: Built with \nSymfony Console component\n.\n\n\nGenerators: Generate boilerplate code for a rapid application development.\n\n\nModular Migrations: Manage your database scheme's evolution through independent versions.\n\n\nSeeders: Easily fill your database with test data after it's created.\n\n\nTest environment: Test your application with ease without installing a web server.\n\n\nInteractive: Every command also includes a help screen which describes available options.\n\n\n\n\nDemo\n#", 
             "title": "Home"
         }, 
         {
             "location": "/#overview", 
-            "text": "Provides a number of helpful commands for your use while developing your application.", 
+            "text": "Craftsman is a command line interface that provides a set of commands that will help you when you're developing your  Codeigniter  application, in addition to make your job easier.", 
             "title": "Overview"
         }, 
         {
