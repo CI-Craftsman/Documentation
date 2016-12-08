@@ -212,8 +212,14 @@
         <ul>
           
             <li class="anchor">
-              <a title="Generators" href="#generators">
-                Generators
+              <a title="Console" href="#console">
+                Console
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Serve" href="#serve">
+                Serve
               </a>
             </li>
           
@@ -226,6 +232,12 @@
             <li class="anchor">
               <a title="Seeders" href="#seeders">
                 Seeders
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Generators" href="#generators">
+                Generators
               </a>
             </li>
           
@@ -286,7 +298,148 @@
           
             <h1>Commands</h1>
           
-          <h2 id="generators">Generators<a class="headerlink" href="#generators" title="Permanent link">#</a></h2>
+          <h2 id="console">Console<a class="headerlink" href="#console" title="Permanent link">#</a></h2>
+<p>Craftsman comes with a built in <a href="http://psysh.org">REPL command</a>  that makes it easy to explore your application in an interactive console. You can start the interactive console using:</p>
+<div class="code"><pre><span></span>php craftsman console
+</pre></div>
+
+
+<p>This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models:</p>
+<div class="code"><pre><span></span><span class="x">php craftsman console</span>
+
+<span class="x">Craftsman v4.2.1 Console</span>
+<span class="x">---------------------------------------------------------------</span>
+<span class="x">Codeigniter : </span><span class="p">$</span><span class="nv">CI</span><span class="x"></span>
+<span class="x">Path: ~/codeigniter/application</span>
+<span class="x">---------------------------------------------------------------</span>
+<span class="x">Psy Shell v0.7.2 (PHP 7.0.12 — cli) by Justin Hileman</span>
+<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">CI</span><span class="x">-&gt;load-&gt;model(&#39;foo_model&#39;);</span>
+<span class="x">=&gt; CI_Loader </span><span class="err">{#</span><span class="x">153}</span>
+<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">Foo</span><span class="x"> = </span><span class="p">$</span><span class="nv">CI</span><span class="x">-&gt;foo_model;</span>
+<span class="x">=&gt; Foo_model </span><span class="err">{#</span><span class="x">313}</span>
+<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">Foo</span><span class="x">-&gt;find_all();</span>
+</pre></div>
+
+
+<p>To quit you can use <code>CTRL-C</code> or by typing <code>exit</code>.</p>
+<hr />
+<h2 id="serve">Serve<a class="headerlink" href="#serve" title="Permanent link">#</a></h2>
+<p>Typically, you may use a web server such as Apache or Nginx to serve your Codeigniter applications. If you are on PHP 5.4+ and would like to use PHP's built-in development server, you may use the serve command:</p>
+<div class="code"><pre><span></span>php craftsman serve
+</pre></div>
+
+
+<p>By default the HTTP-server will listen to port 8000. However if that port is already in use or you wish to serve multiple applications this way, you might want to specify what port to use. Just add the --port argument:</p>
+<div class="code"><pre><span></span>php craftsman serve --port=8080
+</pre></div>
+
+
+<hr />
+<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">#</a></h2>
+<p>Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.</p>
+<div class="admonition warning">
+<p class="admonition-title">Database Connection Required</p>
+<p>If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.</p>
+</div>
+<h3 id="file-names">File names<a class="headerlink" href="#file-names" title="Permanent link">#</a></h3>
+<p>Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:</p>
+<ul>
+<li><strong>Sequential</strong>: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.</li>
+<li><strong>Timestamp</strong>: each migration is enumerated with a timestamp, in <code>YYYYMMDDHHIISS</code> format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.</li>
+</ul>
+<p>By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the <code>--sequential</code> argument.</p>
+<h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">#</a></h3>
+<p>You can display the current migration status with the command:</p>
+<div class="code"><pre><span></span>php craftsman migrate:check
+</pre></div>
+
+
+<p>Output:</p>
+<div class="code"><pre><span></span>(in ~/workspace/codeigniter/application/)
+
+----------- ----------- ---------------- ------------------
+ Name        Type        Local version    Database version  
+----------- ----------- ---------------- ------------------
+ ci_system   timestamp   20161106010705   20161106010705    
+----------- ----------- ---------------- ------------------
+
+Migration directory: migrations/
+
+[OK] Database is up-to-date.    
+</pre></div>
+
+
+<p>Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:</p>
+<div class="code"><pre><span></span>! [NOTE] The Database is not up-to-date with the latest changes, run:&#39;migrate:latest&#39; to update them.
+</pre></div>
+
+
+<h3 id="running-migrations">Running migrations<a class="headerlink" href="#running-migrations" title="Permanent link">#</a></h3>
+<p>Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.</p>
+<p><strong>Latest</strong></p>
+<p>Allows you to migrate the latest version, the migration class will use the very newest migration found in the <em>Filesystem</em>.</p>
+<div class="code"><pre><span></span>php craftsman migrate:latest
+</pre></div>
+
+
+<p><strong>Version</strong></p>
+<p>Allows you to roll back changes or step forwards pro-grammatically to specific versions.</p>
+<div class="code"><pre><span></span>php craftsman migrate:version &lt;number&gt;
+</pre></div>
+
+
+<h3 id="rolling-back">Rolling-back<a class="headerlink" href="#rolling-back" title="Permanent link">#</a></h3>
+<p>Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.</p>
+<h4 id="rollback-the-last-migration">Rollback the last migration<a class="headerlink" href="#rollback-the-last-migration" title="Permanent link">#</a></h4>
+<div class="code"><pre><span></span>php craftsman migrate:rollback
+</pre></div>
+
+
+<h4 id="rollback-all-migrations">Rollback all migrations<a class="headerlink" href="#rollback-all-migrations" title="Permanent link">#</a></h4>
+<div class="code"><pre><span></span>php craftsman migrate:reset
+</pre></div>
+
+
+<h4 id="rollback-all-migrations-and-run-them-all-again">Rollback all migrations and run them all again<a class="headerlink" href="#rollback-all-migrations-and-run-them-all-again" title="Permanent link">#</a></h4>
+<div class="code"><pre><span></span>php craftsman migrate:refresh
+</pre></div>
+
+
+<hr />
+<h2 id="seeders">Seeders<a class="headerlink" href="#seeders" title="Permanent link">#</a></h2>
+<p>Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the <a href="https://codeigniter.com/userguide3/general/styleguide.html">CodeIgniter Style Guide</a>.</p>
+<p>A seeder class only contains the <code>run()</code> method by default, this method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:</p>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+
+<span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="k">implements</span> <span class="nx">\Craftsman\Interfaces\Seeder</span>
+<span class="p">{</span>
+  <span class="k">private</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;ci_foo&#39;</span><span class="p">;</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+  <span class="p">{</span>   
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
+      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title 1&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Name 1&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">)</span>
+    <span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* End of file Foo.php */</span>
+<span class="cm">/* Location: /path/to/application/seeders/Foo.php */</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>One you have written your seeder class, you may use the command:</p>
+<div class="code"><pre><span></span>php craftsman db:seed &lt;name&gt;
+</pre></div>
+
+
+<p>Check the <a href="https://codeigniter.com/user_guide/query_builder.html">Query Builder Class</a> to manually insert data.</p>
+<h2 id="generators">Generators<a class="headerlink" href="#generators" title="Permanent link">#</a></h2>
 <p>Craftsman provides a variety of generators to speed up your development process.</p>
 <!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
 
@@ -477,86 +630,13 @@
 
 
 <p>Now it's your turn to give the finishing touches before running this scheme. Check the <a href="https://codeigniter.com/user_guide/database/forge.html">Database Forge documentation</a> for more information about Codeigniter Migrations.</p>
-<hr />
-<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">#</a></h2>
-<p>Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.</p>
-<div class="admonition warning">
-<p class="admonition-title">Database Connection Required</p>
-<p>If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.</p>
-</div>
-<h3 id="file-names">File names<a class="headerlink" href="#file-names" title="Permanent link">#</a></h3>
-<p>Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:</p>
-<ul>
-<li><strong>Sequential</strong>: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.</li>
-<li><strong>Timestamp</strong>: each migration is enumerated with a timestamp, in <code>YYYYMMDDHHIISS</code> format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.</li>
-</ul>
-<p>By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the <code>--sequential</code> argument.</p>
-<h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">#</a></h3>
-<p>You can display the current migration status with the command:</p>
-<div class="code"><pre><span></span>php craftsman migrate:check
-</pre></div>
-
-
-<p>Output:</p>
-<div class="code"><pre><span></span>(in ~/workspace/codeigniter/application/)
-
------------ ----------- ---------------- ------------------
- Name        Type        Local version    Database version  
------------ ----------- ---------------- ------------------
- ci_system   timestamp   20161106010705   20161106010705    
------------ ----------- ---------------- ------------------
-
-Migration directory: migrations/
-
-[OK] Database is up-to-date.    
-</pre></div>
-
-
-<p>Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:</p>
-<div class="code"><pre><span></span>! [NOTE] The Database is not up-to-date with the latest changes, run:&#39;migrate:latest&#39; to update them.
-</pre></div>
-
-
-<h3 id="running-migrations">Running migrations<a class="headerlink" href="#running-migrations" title="Permanent link">#</a></h3>
-<p>Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.</p>
-<p><strong>Latest</strong></p>
-<p>Allows you to migrate the latest version, the migration class will use the very newest migration found in the <em>Filesystem</em>.</p>
-<div class="code"><pre><span></span>php craftsman migrate:latest
-</pre></div>
-
-
-<p><strong>Version</strong></p>
-<p>Allows you to roll back changes or step forwards pro-grammatically to specific versions.</p>
-<div class="code"><pre><span></span>php craftsman migrate:version &lt;number&gt;
-</pre></div>
-
-
-<h3 id="rolling-back">Rolling-back<a class="headerlink" href="#rolling-back" title="Permanent link">#</a></h3>
-<p>Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.</p>
-<h4 id="rollback-the-last-migration">Rollback the last migration<a class="headerlink" href="#rollback-the-last-migration" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:rollback
-</pre></div>
-
-
-<h4 id="rollback-all-migrations">Rollback all migrations<a class="headerlink" href="#rollback-all-migrations" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:reset
-</pre></div>
-
-
-<h4 id="rollback-all-migrations-and-run-them-all-again">Rollback all migrations and run them all again<a class="headerlink" href="#rollback-all-migrations-and-run-them-all-again" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:refresh
-</pre></div>
-
-
-<hr />
-<h2 id="seeders">Seeders<a class="headerlink" href="#seeders" title="Permanent link">#</a></h2>
-<p>Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the <a href="https://codeigniter.com/userguide3/general/styleguide.html">CodeIgniter Style Guide</a>. All seed classes are stored by default in your <code>path/to/application/seeders</code> folder.</p>
-<p>To generate a seeder:</p>
+<h3 id="seeders_1">Seeders<a class="headerlink" href="#seeders_1" title="Permanent link">#</a></h3>
+<p>Generate a seeder with the command:</p>
 <div class="code"><pre><span></span>php craftsman generate:seeder &lt;name&gt;
 </pre></div>
 
 
-<p>A seeder class only contains the <code>run()</code> method by default, this method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:</p>
+<p>Output:</p>
 <div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
@@ -568,9 +648,7 @@ Migration directory: migrations/
   <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
   <span class="p">{</span>   
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
-      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title 1&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Name 1&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">)</span>
+      <span class="c1">// insert your data here...</span>
     <span class="p">]);</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -581,12 +659,7 @@ Migration directory: migrations/
 </pre></div>
 
 
-<p>One you have written your seeder class, you may use the command:</p>
-<div class="code"><pre><span></span>php craftsman db:seed &lt;name&gt;
-</pre></div>
-
-
-<p>Check the <a href="https://codeigniter.com/user_guide/query_builder.html">Query Builder Class</a> to manually insert data.</p>
+<p>All seed classes are stored by default in your <code>path/to/application/seeders</code> folder.</p>
 <hr />
           <aside class="copyright" role="note">
             
