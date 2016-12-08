@@ -1,3 +1,156 @@
+## Console
+
+Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it easy to explore your application in an interactive console. You can start the interactive console using:
+
+    php craftsman console
+
+This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models:
+
+```
+php craftsman console
+
+Craftsman v4.2.1 Console
+---------------------------------------------------------------
+Codeigniter : $CI
+Path: ~/codeigniter/application
+---------------------------------------------------------------
+Psy Shell v0.7.2 (PHP 7.0.12 — cli) by Justin Hileman
+>>> $CI->load->model('foo_model');
+=> CI_Loader {#153}
+>>> $Foo = $CI->foo_model;
+=> Foo_model {#313}
+>>> $Foo->find_all();
+```
+
+To quit you can use `CTRL-C` or by typing `exit`.
+
+---
+
+## Serve
+
+Typically, you may use a web server such as Apache or Nginx to serve your Codeigniter applications. If you are on PHP 5.4+ and would like to use PHP's built-in development server, you may use the serve command:
+
+    php craftsman serve
+
+By default the HTTP-server will listen to port 8000. However if that port is already in use or you wish to serve multiple applications this way, you might want to specify what port to use. Just add the --port argument:
+
+    php craftsman serve --port=8080
+
+---
+
+## Migrations
+
+Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.
+
+!!! warning "Database Connection Required"
+    If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.
+
+### File names
+
+Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:
+
+* **Sequential**: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.
+* **Timestamp**: each migration is enumerated with a timestamp, in `YYYYMMDDHHIISS` format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.
+
+By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the `--sequential` argument.
+
+### Displaying info
+
+You can display the current migration status with the command:
+
+	php craftsman migrate:check
+
+Output:
+
+```
+(in ~/workspace/codeigniter/application/)
+
+----------- ----------- ---------------- ------------------
+ Name        Type        Local version    Database version  
+----------- ----------- ---------------- ------------------
+ ci_system   timestamp   20161106010705   20161106010705    
+----------- ----------- ---------------- ------------------
+
+Migration directory: migrations/
+
+[OK] Database is up-to-date.    
+```
+
+Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:
+
+    ! [NOTE] The Database is not up-to-date with the latest changes, run:'migrate:latest' to update them.
+
+### Running migrations
+
+Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.
+
+**Latest**
+
+Allows you to migrate the latest version, the migration class will use the very newest migration found in the *Filesystem*.
+
+	php craftsman migrate:latest
+
+**Version**
+
+Allows you to roll back changes or step forwards pro-grammatically to specific versions.
+
+	php craftsman migrate:version <number>
+
+### Rolling-back
+
+Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.
+
+#### Rollback the last migration
+
+	php craftsman migrate:rollback
+
+#### Rollback all migrations
+
+	php craftsman migrate:reset
+
+#### Rollback all migrations and run them all again
+
+	php craftsman migrate:refresh
+
+---
+
+## Seeders
+
+Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the [CodeIgniter Style Guide](https://codeigniter.com/userguide3/general/styleguide.html).
+
+A seeder class only contains the `run()` method by default, this method is called when the `db:seed` command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:
+
+```php
+
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+use Craftsman\Classes\Seeder;
+
+class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
+{
+  private $table = 'ci_foo';
+
+  public function run()
+  {   
+    $this->db->insert($this->table, [
+      'title' => 'Title 1',
+      'name'  => 'Name 1',
+      'date'  => date('Y-m-d H:i:s')
+    ]);
+  }
+}
+
+/* End of file Foo.php */
+/* Location: /path/to/application/seeders/Foo.php */
+?>
+```
+
+One you have written your seeder class, you may use the command:
+
+    php craftsman db:seed <name>
+
+Check the [Query Builder Class](https://codeigniter.com/user_guide/query_builder.html) to manually insert data.
+
 ## Generators
 
 Craftsman provides a variety of generators to speed up your development process.
@@ -195,93 +348,13 @@ class Migration_create_users extends CI_Migration {
 
 Now it's your turn to give the finishing touches before running this scheme. Check the [Database Forge documentation](https://codeigniter.com/user_guide/database/forge.html) for more information about Codeigniter Migrations.
 
----
+### Seeders
 
-## Migrations
-
-Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.
-
-!!! warning "Database Connection Required"
-    If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.
-
-### File names
-
-Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:
-
-* **Sequential**: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.
-* **Timestamp**: each migration is enumerated with a timestamp, in `YYYYMMDDHHIISS` format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.
-
-By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the `--sequential` argument.
-
-### Displaying info
-
-You can display the current migration status with the command:
-
-	php craftsman migrate:check
-
-Output:
-
-```
-(in ~/workspace/codeigniter/application/)
-
------------ ----------- ---------------- ------------------
- Name        Type        Local version    Database version  
------------ ----------- ---------------- ------------------
- ci_system   timestamp   20161106010705   20161106010705    
------------ ----------- ---------------- ------------------
-
-Migration directory: migrations/
-
-[OK] Database is up-to-date.    
-```
-
-Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:
-
-    ! [NOTE] The Database is not up-to-date with the latest changes, run:'migrate:latest' to update them.
-
-### Running migrations
-
-Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.
-
-**Latest**
-
-Allows you to migrate the latest version, the migration class will use the very newest migration found in the *Filesystem*.
-
-	php craftsman migrate:latest
-
-**Version**
-
-Allows you to roll back changes or step forwards pro-grammatically to specific versions.
-
-	php craftsman migrate:version <number>
-
-### Rolling-back
-
-Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.
-
-#### Rollback the last migration
-
-	php craftsman migrate:rollback
-
-#### Rollback all migrations
-
-	php craftsman migrate:reset
-
-#### Rollback all migrations and run them all again
-
-	php craftsman migrate:refresh
-
----
-
-## Seeders
-
-Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the [CodeIgniter Style Guide](https://codeigniter.com/userguide3/general/styleguide.html). All seed classes are stored by default in your `path/to/application/seeders` folder.
-
-To generate a seeder:
+Generate a seeder with the command:
 
     php craftsman generate:seeder <name>
 
-A seeder class only contains the `run()` method by default, this method is called when the `db:seed` command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:
+Output:
 
 ```php
 
@@ -296,9 +369,7 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
   public function run()
   {   
     $this->db->insert($this->table, [
-      'title' => 'Title 1',
-      'name'  => 'Name 1',
-      'date'  => date('Y-m-d H:i:s')
+      // insert your data here...
     ]);
   }
 }
@@ -308,10 +379,7 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 ?>
 ```
 
-One you have written your seeder class, you may use the command:
+All seed classes are stored by default in your `path/to/application/seeders` folder.
 
-    php craftsman db:seed <name>
-
-Check the [Query Builder Class](https://codeigniter.com/user_guide/query_builder.html) to manually insert data.
 
 ---
