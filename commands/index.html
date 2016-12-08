@@ -21,12 +21,10 @@
     
     <meta property="og:url" content="https://ci-craftsman.github.io/documentation/commands/">
     <meta property="og:title" content="Craftsman">
-    <meta property="og:image" content="https://ci-craftsman.github.io/documentation/commands//../images/noun_411791_cc.svg">
+    <meta property="og:image" content="https://ci-craftsman.github.io/documentation/commands//../">
     <meta name="apple-mobile-web-app-title" content="Craftsman">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-      <link rel="apple-touch-icon" href="../images/noun_411791_cc.svg">
     
     
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
@@ -72,7 +70,7 @@
   
   
   
-  <body class="palette-primary-red palette-accent-cyan">
+  <body class="palette-primary-teal ">
     
       
       
@@ -140,15 +138,11 @@
   <a href="https://github.com/CI-Craftsman/CLI" class="project">
     <div class="banner">
       
-        <div class="logo">
-          <img src="../images/noun_411791_cc.svg">
-        </div>
-      
       <div class="name">
         <strong>
           Craftsman
           <span class="version">
-            4.1.1
+            4.2.1
           </span>
         </strong>
         
@@ -164,7 +158,7 @@
         <ul class="repo">
           <li class="repo-download">
             
-            <a href="https://github.com/CI-Craftsman/CLI/archive/4.1.1.zip" target="_blank" title="Download" data-action="download">
+            <a href="https://github.com/CI-Craftsman/CLI/archive/4.2.1.zip" target="_blank" title="Download" data-action="download">
               <i class="icon icon-download"></i> Download
             </a>
           </li>
@@ -299,7 +293,7 @@
     php craftsman generate:<command> <args> --path="path/to/new" -->
 
 <h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permanent link">#</a></h3>
-<p>Generate a controller</p>
+<p>Generate a controller with the command:</p>
 <div class="code"><pre><span></span>php craftsman generate:controller &lt;name&gt;
 </pre></div>
 
@@ -381,7 +375,7 @@
 
 
 <h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">#</a></h3>
-<p>Generate a model</p>
+<p>Generate a model with the command:</p>
 <div class="code"><pre><span></span>php craftsman generate:model &lt;name&gt;
 </pre></div>
 
@@ -405,7 +399,7 @@
 
 
 <h3 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">#</a></h3>
-<p>Generate a migration</p>
+<p>Generate a migration with the command:</p>
 <div class="code"><pre><span></span>php craftsman generate:migration &lt;name&gt;
 </pre></div>
 
@@ -496,7 +490,7 @@
 <li><strong>Sequential</strong>: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.</li>
 <li><strong>Timestamp</strong>: each migration is enumerated with a timestamp, in <code>YYYYMMDDHHIISS</code> format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.</li>
 </ul>
-<p>By default Craftsman uses the sequential style but you can change it using the <code>--timestamp</code> argument.</p>
+<p>By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the <code>--sequential</code> argument.</p>
 <h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">#</a></h3>
 <p>You can display the current migration status with the command:</p>
 <div class="code"><pre><span></span>php craftsman migrate:check
@@ -563,7 +557,6 @@ Migration directory: migrations/
 
 
 <p>A seeder class only contains the <code>run()</code> method by default, this method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:</p>
-<p>Add a database insert statement to the run method:</p>
 <div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
@@ -597,8 +590,7 @@ Migration directory: migrations/
 <hr />
           <aside class="copyright" role="note">
             
-              Copyright (c) 2016 David Sosa Valdes 
-- Tools Logo by Blackwoodmedia.com.au from the Noun Project
+              Copyright (c) 2016 David Sosa Valdes
  &ndash;
             
             Documentation built with
