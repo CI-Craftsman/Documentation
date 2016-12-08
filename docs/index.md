@@ -17,7 +17,7 @@ Built on top of great technology.
 
 <div class="embed-responsive embed-responsive-16by9">
   <div class="embed-responsive-item">
-    <a href="https://asciinema.org/a/45166" target="_blank"><img src="https://asciinema.org/a/45166.png" width="806"/></a>
+    <script type="text/javascript" src="https://asciinema.org/a/95481.js" id="asciicast-95481" async></script>
   </div>
 </div>
 

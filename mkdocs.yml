@@ -10,26 +10,23 @@ repo_url: https://github.com/CI-Craftsman/CLI
 
 # Copyright
 copyright: |
-  Copyright (c) 2016 David Sosa Valdes 
-  - Tools Logo by Blackwoodmedia.com.au from the Noun Project
+  Copyright (c) 2016 David Sosa Valdes
 
 theme: material
 
 # Options
 extra:
-  version: 4.1.1
-  logo: 'images/noun_411791_cc.svg'
+  version: 4.2.1
   github:
     download_release: true
   author:
     github: davidsosavaldes
     twitter: itsdsv
   palette:
-    primary: 'red'
-    accent: 'cyan'    
+    primary: 'teal'
   font:
     text: 'Roboto'
-    code: 'Roboto Mono'  
+    code: 'Roboto Mono'
 
 # Extensions
 markdown_extensions:

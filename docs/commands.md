@@ -8,7 +8,7 @@ Craftsman provides a variety of generators to speed up your development process.
 
 ### Controller
 
-Generate a controller
+Generate a controller with the command:
 
     php craftsman generate:controller <name>
 
@@ -91,7 +91,7 @@ class Foo extends CI_Controller
 
 ### Model
 
-Generate a model
+Generate a model with the command:
 
     php craftsman generate:model <name>
 
@@ -116,7 +116,7 @@ class Foo_model extends CI_Model
 
 ### Migration
 
-Generate a migration
+Generate a migration with the command:
 
     php craftsman generate:migration <name>
 
@@ -211,7 +211,7 @@ Each Migration may run in numeric order forward or backwards depending on the me
 * **Sequential**: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.
 * **Timestamp**: each migration is enumerated with a timestamp, in `YYYYMMDDHHIISS` format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.
 
-By default Craftsman uses the sequential style but you can change it using the `--timestamp` argument.
+By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the `--sequential` argument.
 
 ### Displaying info
 
@@ -282,8 +282,6 @@ To generate a seeder:
     php craftsman generate:seeder <name>
 
 A seeder class only contains the `run()` method by default, this method is called when the `db:seed` command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:
-
-Add a database insert statement to the run method:
 
 ```php
 
