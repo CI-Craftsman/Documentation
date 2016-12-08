@@ -1,6 +1,6 @@
 ## Overview
 
-Provides a number of helpful commands for your use while developing your application.
+Craftsman is a command line interface that provides a set of commands that will help you when you're developing your [Codeigniter](http://codeigniter.com) application, in addition to make your job easier.
 
 ## Features
 
