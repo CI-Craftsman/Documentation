@@ -16,6 +16,7 @@ theme: material
 
 # Options
 extra:
+  logo: 'images/ic_launcher.png'
   version: 4.2.1
   github:
     download_release: true
