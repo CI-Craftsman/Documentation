@@ -24,6 +24,10 @@ Psy Shell v0.7.2 (PHP 7.0.12 — cli) by Justin Hileman
 
 To quit you can use `CTRL-C` or by typing `exit`.
 
+Here's a little demo that runs a database [Migration](#migrations), next runs a [Seed](#seeders) and finally use a simple Model to query all the information stored:
+
+<script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
+
 ---
 
 ## Serve
@@ -358,9 +362,9 @@ Output:
 
 ```php
 
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-use Craftsman\Classes\Seeder;
+use Craftsman\Database\Seeder;
 
 class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 {
@@ -368,7 +372,7 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 
   public function run()
   {   
-    $this->db->insert($this->table, [
+    $this->db->insert_batch($this->table, [
       // insert your data here...
     ]);
   }
