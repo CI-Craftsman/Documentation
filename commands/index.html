@@ -148,7 +148,7 @@
         <strong>
           Craftsman
           <span class="version">
-            4.2.1
+            4.2.3
           </span>
         </strong>
         
@@ -164,7 +164,7 @@
         <ul class="repo">
           <li class="repo-download">
             
-            <a href="https://github.com/CI-Craftsman/CLI/archive/4.2.1.zip" target="_blank" title="Download" data-action="download">
+            <a href="https://github.com/CI-Craftsman/CLI/archive/4.2.3.zip" target="_blank" title="Download" data-action="download">
               <i class="icon icon-download"></i> Download
             </a>
           </li>
@@ -328,6 +328,9 @@
 
 
 <p>To quit you can use <code>CTRL-C</code> or by typing <code>exit</code>.</p>
+<p>Here's a little demo that runs a database <a href="#migrations">Migration</a>, next runs a <a href="#seeders">Seed</a> and finally use a simple Model to query all the information stored:</p>
+<script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
+
 <hr />
 <h2 id="serve">Serve<a class="headerlink" href="#serve" title="Permanent link">#</a></h2>
 <p>Typically, you may use a web server such as Apache or Nginx to serve your Codeigniter applications. If you are on PHP 5.4+ and would like to use PHP's built-in development server, you may use the serve command:</p>
@@ -643,9 +646,9 @@ Migration directory: migrations/
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="code"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Craftsman\Database\Seeder</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="k">implements</span> <span class="nx">\Craftsman\Interfaces\Seeder</span>
 <span class="p">{</span>
@@ -653,7 +656,7 @@ Migration directory: migrations/
 
   <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
   <span class="p">{</span>   
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_batch</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
       <span class="c1">// insert your data here...</span>
     <span class="p">]);</span>
   <span class="p">}</span>
