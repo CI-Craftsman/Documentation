@@ -1,10 +1,6 @@
 ## Console
 
-Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it easy to explore your application in an interactive console. You can start the interactive console using:
-
-    php craftsman console
-
-This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models:
+Craftsman comes with a built in [REPL command](http://psysh.org) that makes it easy to explore your application in an interactive console.
 
 ```
 php craftsman console
@@ -158,10 +154,6 @@ Check the [Query Builder Class](https://codeigniter.com/user_guide/query_builder
 ## Generators
 
 Craftsman provides a variety of generators to speed up your development process.
-
-<!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
-
-    php craftsman generate:<command> <args> --path="path/to/new" -->
 
 ### Controller
 
@@ -384,6 +376,5 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 ```
 
 All seed classes are stored by default in your `path/to/application/seeders` folder.
-
 
 ---
