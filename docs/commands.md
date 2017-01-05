@@ -4,25 +4,7 @@ Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it 
 
     php craftsman console
 
-This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models:
-
-```
-php craftsman console
-
-Craftsman v4.2.1 Console
----------------------------------------------------------------
-Codeigniter : $CI
-Path: ~/codeigniter/application
----------------------------------------------------------------
-Psy Shell v0.7.2 (PHP 7.0.12 — cli) by Justin Hileman
->>> $CI->load->model('foo_model');
-=> CI_Loader {#153}
->>> $Foo = $CI->foo_model;
-=> Foo_model {#313}
->>> $Foo->find_all();
-```
-
-To quit you can use `CTRL-C` or by typing `exit`.
+This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models. To quit you can use `CTRL-C` or by typing `exit`.
 
 Here's a little demo that runs a database [Migration](#migrations), next runs a [Seed](#seeders) and finally use a simple Model to query all the information stored:
 
