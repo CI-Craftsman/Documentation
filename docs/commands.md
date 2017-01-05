@@ -141,10 +141,6 @@ Check the [Query Builder Class](https://codeigniter.com/user_guide/query_builder
 
 Craftsman provides a variety of generators to speed up your development process.
 
-<!-- Every Generator Command comes with a `--path` argument to control where the generated file will be placed overwriting the default path.
-
-    php craftsman generate:<command> <args> --path="path/to/new" -->
-
 ### Controller
 
 Generate a controller with the command:
@@ -366,6 +362,5 @@ class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 ```
 
 All seed classes are stored by default in your `path/to/application/seeders` folder.
-
 
 ---
