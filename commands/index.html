@@ -305,24 +305,12 @@
             <h1>Commands</h1>
           
           <h2 id="console">Console<a class="headerlink" href="#console" title="Permanent link">#</a></h2>
-<p>Craftsman comes with a built in <a href="http://psysh.org">REPL command</a> that makes it easy to explore your application in an interactive console.</p>
-<div class="code"><pre><span></span><span class="x">php craftsman console</span>
-
-<span class="x">Craftsman v4.2.1 Console</span>
-<span class="x">---------------------------------------------------------------</span>
-<span class="x">Codeigniter : </span><span class="p">$</span><span class="nv">CI</span><span class="x"></span>
-<span class="x">Path: ~/codeigniter/application</span>
-<span class="x">---------------------------------------------------------------</span>
-<span class="x">Psy Shell v0.7.2 (PHP 7.0.12 — cli) by Justin Hileman</span>
-<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">CI</span><span class="x">-&gt;load-&gt;model(&#39;foo_model&#39;);</span>
-<span class="x">=&gt; CI_Loader </span><span class="err">{#</span><span class="x">153}</span>
-<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">Foo</span><span class="x"> = </span><span class="p">$</span><span class="nv">CI</span><span class="x">-&gt;foo_model;</span>
-<span class="x">=&gt; Foo_model </span><span class="err">{#</span><span class="x">313}</span>
-<span class="x">&gt;&gt;&gt; </span><span class="p">$</span><span class="nv">Foo</span><span class="x">-&gt;find_all();</span>
+<p>Craftsman comes with a built in <a href="http://psysh.org">REPL command</a>  that makes it easy to explore your application in an interactive console. You can start the interactive console using:</p>
+<div class="code"><pre><span></span>php craftsman console
 </pre></div>
 
 
-<p>To quit you can use <code>CTRL-C</code> or by typing <code>exit</code>.</p>
+<p>This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models. To quit you can use <code>CTRL-C</code> or by typing <code>exit</code>.</p>
 <p>Here's a little demo that runs a database <a href="#migrations">Migration</a>, next runs a <a href="#seeders">Seed</a> and finally use a simple Model to query all the information stored:</p>
 <script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
 
@@ -663,7 +651,7 @@ Migration directory: migrations/
 <hr />
           <aside class="copyright" role="note">
             
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Craftsman is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> Craftsman is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC SA License</a>.
  &ndash;
             
             Documentation built with
