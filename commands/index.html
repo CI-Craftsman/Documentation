@@ -403,18 +403,16 @@ Migration directory: migrations/
 <p>A seeder class only contains the <code>run()</code> method by default, this method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:</p>
 <div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
-<span class="k">use</span> <span class="nx">Craftsman\Classes\Seeder</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Craftsman\Database\Seeder</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="k">implements</span> <span class="nx">\Craftsman\Interfaces\Seeder</span>
 <span class="p">{</span>
-  <span class="k">private</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;ci_foo&#39;</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;&lt;table_name&gt;&#39;</span><span class="p">;</span>
 
   <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
   <span class="p">{</span>   
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
-      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title 1&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Name 1&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d H:i:s&#39;</span><span class="p">)</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_batch</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">,</span> <span class="p">[</span>
+      <span class="c1">// insert your data here...</span>
     <span class="p">]);</span>
   <span class="p">}</span>
 <span class="p">}</span>
