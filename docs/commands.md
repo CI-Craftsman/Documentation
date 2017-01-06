@@ -1,6 +1,6 @@
 ## Console
 
-Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it easy to explore your application in an interactive console. You can start the interactive console using:
+Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it easy to explore your application. You can start it with:
 
     php craftsman console
 
