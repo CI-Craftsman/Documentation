@@ -110,18 +110,16 @@ A seeder class only contains the `run()` method by default, this method is calle
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-use Craftsman\Classes\Seeder;
+use Craftsman\Database\Seeder;
 
 class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
 {
-  private $table = 'ci_foo';
+  private $table = '<table_name>';
 
   public function run()
   {   
-    $this->db->insert($this->table, [
-      'title' => 'Title 1',
-      'name'  => 'Name 1',
-      'date'  => date('Y-m-d H:i:s')
+    $this->db->insert_batch($this->table, [
+      // insert your data here...
     ]);
   }
 }
