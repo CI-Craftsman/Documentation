@@ -1,16 +1,12 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
-<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
-<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
-<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <title>Commands - Craftsman</title>
-      
+        <meta name="description" content="Advanced command line interface for Codeigniter 3.0 using the Symfony Console component.">
       
       
         <link rel="canonical" href="https://ci-craftsman.github.io/documentation/commands/">
@@ -18,336 +14,465 @@
       
         <meta name="author" content="David Sosa Valdes">
       
-    
-    <meta property="og:url" content="https://ci-craftsman.github.io/documentation/commands/">
-    <meta property="og:title" content="Craftsman">
-    <meta property="og:image" content="https://ci-craftsman.github.io/documentation/commands//../images/ic_launcher.png">
-    <meta name="apple-mobile-web-app-title" content="Craftsman">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-      <link rel="apple-touch-icon" href="../images/ic_launcher.png">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <style>
-      @font-face {
-      	font-family: 'Icon';
-      	src: url('../assets/fonts/icon.eot?52m981');
-      	src: url('../assets/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-      		   url('../assets/fonts/icon.woff?52m981')
-               format('woff'),
-      		   url('../assets/fonts/icon.ttf?52m981')
-               format('truetype'),
-      		   url('../assets/fonts/icon.svg?52m981#icon')
-               format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-    </style>
-    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
-    
-      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.0, mkdocs-material-1.0.5">
     
     
       
+        <title>Commands - Craftsman</title>
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
-      <style>
-        body, input {
-          font-family: 'Roboto', Helvetica, Arial, sans-serif;
-        }
-        pre, code {
-          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
-        }
-      </style>
     
     
-    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-9c62e3c932.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-02ce7adcc2.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
     
   </head>
   
   
   
-  <body class="palette-primary-teal ">
-    
-      
-      
-    
-    <div class="backdrop">
-      <div class="backdrop-paper"></div>
-    </div>
-    <input class="toggle" type="checkbox" id="toggle-drawer">
-    <input class="toggle" type="checkbox" id="toggle-search">
-    <label class="toggle-button overlay" for="toggle-drawer"></label>
-    <header class="header">
-      <nav aria-label="Header">
-  <div class="bar default">
-    <div class="button button-menu" role="button" aria-label="Menu">
-      <label class="toggle-button icon icon-menu" for="toggle-drawer">
-        <span></span>
-      </label>
-    </div>
-    <div class="stretch">
-      <div class="title">
-        
-          <span class="path">
-            
-          </span>
-        
-        Commands
-      </div>
-    </div>
-    
-      
-      <div class="button button-twitter" role="button" aria-label="Twitter">
-        <a href="https://twitter.com/itsdsv" title="@itsdsv on Twitter" target="_blank" class="toggle-button icon icon-twitter"></a>
-      </div>
-    
-    
-      
-      <div class="button button-github" role="button" aria-label="GitHub">
-        <a href="https://github.com/davidsosavaldes" title="@davidsosavaldes on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
-      </div>
-    
-    <div class="button button-search" role="button" aria-label="Search">
-      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
-    </div>
-  </div>
-  <div class="bar search">
-    <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back" for="toggle-search"></label>
-    </div>
-    <div class="stretch">
-      <div class="field">
-        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
-      </div>
-    </div>
-    <div class="button button-reset" role="button" aria-label="Search">
-      <button class="toggle-button icon icon-close" id="reset-search"></button>
-    </div>
-  </div>
-</nav>
-    </header>
-    <main class="main">
-      
-      <div class="drawer">
-        <nav aria-label="Navigation">
   
-  <a href="https://github.com/CI-Craftsman/CLI" class="project">
-    <div class="banner">
-      
-        <div class="logo">
-          <img src="../images/ic_launcher.png">
-        </div>
-      
-      <div class="name">
-        <strong>
-          Craftsman
-          <span class="version">
-            4.2.3
-          </span>
-        </strong>
+    <body data-md-color-primary="teal" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
         
-          <br>
-          CI-Craftsman/CLI
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Craftsman" class=" md-logo  md-header-nav__button">
+          
+            <img src="../images/ic_cr.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Commands
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
         
       </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+              
+
+
+  
+
+
+  <a href="https://github.com/CI-Craftsman/CLI" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Craftsman
     </div>
   </a>
-  <div class="scrollable">
-    <div class="wrapper">
+
+            
+          </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <i class=" md-logo  md-nav__button">
       
-        <ul class="repo">
-          <li class="repo-download">
-            
-            <a href="https://github.com/CI-Craftsman/CLI/archive/4.2.3.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
-          <li class="repo-stars">
-            <a href="https://github.com/CI-Craftsman/CLI/stargazers" target="_blank" title="Stargazers" data-action="star">
-              <i class="icon icon-star"></i> Stars
-              <span class="count">&ndash;</span>
-            </a>
-          </li>
-        </ul>
-        <hr>
+        <img src="../images/ic_cr.png">
       
-      <div class="toc">
-        <ul>
-          
-            
-  <li>
-    <a class="" title="Home" href="..">
-      Home
-    </a>
+    </i>
+    Craftsman
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/CI-Craftsman/CLI" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Craftsman
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href=".." title="Home" class="md-nav__link">
+        Home
+      </a>
     
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Installation" href="../installation/">
-      Installation
-    </a>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../installation/" title="Installation" class="md-nav__link">
+        Installation
+      </a>
     
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Usage" href="../usage/">
-      Usage
-    </a>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../usage/" title="Usage" class="md-nav__link">
+        Usage
+      </a>
     
   </li>
 
-          
-            
-  <li>
-    <a class="current" title="Commands" href="./">
+    
+      
+      
+  <li class="md-nav__item">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Commands" class="md-nav__link md-nav__link--active">
       Commands
     </a>
     
+  </li>
+
+    
       
       
-        <ul>
-          
-            <li class="anchor">
-              <a title="Console" href="#console">
-                Console
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Serve" href="#serve">
-                Serve
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Migrations" href="#migrations">
-                Migrations
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Seeders" href="#seeders">
-                Seeders
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Generators" href="#generators">
-                Generators
-              </a>
-            </li>
-          
-        </ul>
-      
+  <li class="md-nav__item">
+    
+      <a href="../extra/" title="Resources" class="md-nav__link">
+        Resources
+      </a>
     
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Resources" href="../extra/">
-      Resources
-    </a>
+    
+      
+      
+  <li class="md-nav__item">
+    
+      <a href="../contributions/" title="Contributions" class="md-nav__link">
+        Contributions
+      </a>
     
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Contributions" href="../contributions/">
-      Contributions
-    </a>
     
-  </li>
-
-          
-        </ul>
-        
-          <hr>
-          <span class="section">The author</span>
-          <ul>
-            
-              
-              <li>
-                <a href="https://twitter.com/itsdsv" target="_blank" title="@itsdsv on Twitter">
-                  @itsdsv on Twitter
-                </a>
-              </li>
-            
-            
-              
-              <li>
-                <a href="https://github.com/davidsosavaldes" target="_blank" title="@davidsosavaldes on GitHub">
-                  @davidsosavaldes on GitHub
-                </a>
-              </li>
-            
-          </ul>
-        
-      </div>
-    </div>
-  </div>
+  </ul>
 </nav>
-      </div>
-      <article class="article">
-        <div class="wrapper">
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#console" title="Console" class="md-nav__link">
+    Console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serve" title="Serve" class="md-nav__link">
+    Serve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrations" title="Migrations" class="md-nav__link">
+    Migrations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-names" title="File names" class="md-nav__link">
+    File names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-info" title="Displaying info" class="md-nav__link">
+    Displaying info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runners" title="Runners" class="md-nav__link">
+    Runners
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latest" title="Latest" class="md-nav__link">
+    Latest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" title="Version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolling-back" title="Rolling-back" class="md-nav__link">
+    Rolling-back
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#previous" title="Previous" class="md-nav__link">
+    Previous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" title="Reset" class="md-nav__link">
+    Reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh" title="Refresh" class="md-nav__link">
+    Refresh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeders" title="Seeders" class="md-nav__link">
+    Seeders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generators" title="Generators" class="md-nav__link">
+    Generators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controller" title="Controller" class="md-nav__link">
+    Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" title="Model" class="md-nav__link">
+    Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration" title="Migration" class="md-nav__link">
+    Migration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeders_1" title="Seeders" class="md-nav__link">
+    Seeders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
-            <h1>Commands</h1>
-          
-          <h2 id="console">Console<a class="headerlink" href="#console" title="Permanent link">#</a></h2>
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+               
+              
+                
+                  <h1>Commands</h1>
+                
+                <h2 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h2>
 <p>Craftsman comes with a built in <a href="http://psysh.org">REPL command</a>  that makes it easy to explore your application. You can start it with:</p>
-<div class="code"><pre><span></span>php craftsman console
+<div class="codehilite"><pre><span></span>php craftsman console
 </pre></div>
 
 
 <p>This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models. To quit you can use <code>CTRL-C</code> or by typing <code>exit</code>.</p>
-<p>Here's a little demo that runs a database <a href="#migrations">Migration</a>, next runs a <a href="#seeders">Seed</a> and finally use a simple Model to query all the information stored:</p>
-<script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
-
 <hr />
-<h2 id="serve">Serve<a class="headerlink" href="#serve" title="Permanent link">#</a></h2>
+<h2 id="serve">Serve<a class="headerlink" href="#serve" title="Permanent link">&para;</a></h2>
 <p>Typically, you may use a web server such as Apache or Nginx to serve your Codeigniter applications. If you are on PHP 5.4+ and would like to use PHP's built-in development server, you may use the serve command:</p>
-<div class="code"><pre><span></span>php craftsman serve
+<div class="codehilite"><pre><span></span>php craftsman serve
 </pre></div>
 
 
 <p>By default the HTTP-server will listen to port 8000. However if that port is already in use or you wish to serve multiple applications this way, you might want to specify what port to use. Just add the --port argument:</p>
-<div class="code"><pre><span></span>php craftsman serve --port=8080
+<div class="codehilite"><pre><span></span>php craftsman serve --port=8080
 </pre></div>
 
 
 <hr />
-<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">#</a></h2>
+<h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">&para;</a></h2>
 <p>Migration schemes are simple files that hold the commands to apply changes to your database. They may create/update tables or fields, but they are not limited to just changing the schema, you could use them to fix bad data in the database or populate new fields.</p>
 <div class="admonition warning">
 <p class="admonition-title">Database Connection Required</p>
 <p>If you're going to use Migration Commands you should configure your "application/config/database.php" settings to access to your database.</p>
 </div>
-<h3 id="file-names">File names<a class="headerlink" href="#file-names" title="Permanent link">#</a></h3>
+<h3 id="file-names">File names<a class="headerlink" href="#file-names" title="Permanent link">&para;</a></h3>
 <p>Each Migration may run in numeric order forward or backwards depending on the method taken. Two numbering styles are available:</p>
 <ul>
 <li><strong>Sequential</strong>: each migration is enumerated in sequence, starting with 001. Each number must be three digits, and there must not be any gaps in the sequence.</li>
 <li><strong>Timestamp</strong>: each migration is enumerated with a timestamp, in <code>YYYYMMDDHHIISS</code> format (e.g. 20121031100537). This helps to prevent conflicts when working in a team environment.</li>
 </ul>
 <p>By default Craftsman uses the 'Timestamp' style but you can change to 'Sequential' using the <code>--sequential</code> argument.</p>
-<h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">#</a></h3>
+<h3 id="displaying-info">Displaying info<a class="headerlink" href="#displaying-info" title="Permanent link">&para;</a></h3>
 <p>You can display the current migration status with the command:</p>
-<div class="code"><pre><span></span>php craftsman migrate:check
+<div class="codehilite"><pre><span></span>php craftsman migrate:check
 </pre></div>
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span>(in ~/workspace/codeigniter/application/)
+<div class="codehilite"><pre><span></span>(in ~/workspace/codeigniter/application/)
 
 ----------- ----------- ---------------- ------------------
  Name        Type        Local version    Database version  
@@ -362,50 +487,52 @@ Migration directory: migrations/
 
 
 <p>Below the information table, there is a legend witch indicates the action to take. If a database update is available, the legend displays the following message:</p>
-<div class="code"><pre><span></span>! [NOTE] The Database is not up-to-date with the latest changes, run:&#39;migrate:latest&#39; to update them.
+<div class="codehilite"><pre><span></span>! [NOTE] The Database is not up-to-date with the latest changes, run:&#39;migrate:latest&#39; to update them.
 </pre></div>
 
 
-<h3 id="running-migrations">Running migrations<a class="headerlink" href="#running-migrations" title="Permanent link">#</a></h3>
+<h3 id="runners">Runners<a class="headerlink" href="#runners" title="Permanent link">&para;</a></h3>
 <p>Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.</p>
-<p><strong>Latest</strong></p>
+<h4 id="latest">Latest<a class="headerlink" href="#latest" title="Permanent link">&para;</a></h4>
 <p>Allows you to migrate the latest version, the migration class will use the very newest migration found in the <em>Filesystem</em>.</p>
-<div class="code"><pre><span></span>php craftsman migrate:latest
+<div class="codehilite"><pre><span></span>php craftsman migrate:latest
 </pre></div>
 
 
-<p><strong>Version</strong></p>
+<h4 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
 <p>Allows you to roll back changes or step forwards pro-grammatically to specific versions.</p>
-<div class="code"><pre><span></span>php craftsman migrate:version &lt;number&gt;
+<div class="codehilite"><pre><span></span>php craftsman migrate:version &lt;number&gt;
 </pre></div>
 
 
-<h3 id="rolling-back">Rolling-back<a class="headerlink" href="#rolling-back" title="Permanent link">#</a></h3>
+<h3 id="rolling-back">Rolling-back<a class="headerlink" href="#rolling-back" title="Permanent link">&para;</a></h3>
 <p>Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.</p>
-<h4 id="rollback-the-last-migration">Rollback the last migration<a class="headerlink" href="#rollback-the-last-migration" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:rollback
+<h4 id="previous">Previous<a class="headerlink" href="#previous" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>php craftsman migrate:rollback
 </pre></div>
 
 
-<h4 id="rollback-all-migrations">Rollback all migrations<a class="headerlink" href="#rollback-all-migrations" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:reset
+<h4 id="reset">Reset<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h4>
+<p>Rollback all migrations.</p>
+<div class="codehilite"><pre><span></span>php craftsman migrate:reset
 </pre></div>
 
 
-<h4 id="rollback-all-migrations-and-run-them-all-again">Rollback all migrations and run them all again<a class="headerlink" href="#rollback-all-migrations-and-run-them-all-again" title="Permanent link">#</a></h4>
-<div class="code"><pre><span></span>php craftsman migrate:refresh
+<h4 id="refresh">Refresh<a class="headerlink" href="#refresh" title="Permanent link">&para;</a></h4>
+<p>Rollback all migrations and run them all again.</p>
+<div class="codehilite"><pre><span></span>php craftsman migrate:refresh
 </pre></div>
 
 
 <hr />
-<h2 id="seeders">Seeders<a class="headerlink" href="#seeders" title="Permanent link">#</a></h2>
+<h2 id="seeders">Seeders<a class="headerlink" href="#seeders" title="Permanent link">&para;</a></h2>
 <p>Craftsman comes with a simple method of seeding your database. Seeders may have any name you wish, but probably should follow the <a href="https://codeigniter.com/userguide3/general/styleguide.html">CodeIgniter Style Guide</a>.</p>
 <p>A seeder class only contains the <code>run()</code> method by default, this method is called when the <code>db:seed</code> command is executed. Within the run method, you may insert data into your database however you wish. Here's an example:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">use</span> <span class="nx">Craftsman\Database\Seeder</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span> <span class="k">implements</span> <span class="nx">\Craftsman\Interfaces\Seeder</span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Seeder</span>
 <span class="p">{</span>
   <span class="k">private</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;&lt;table_name&gt;&#39;</span><span class="p">;</span>
 
@@ -424,21 +551,21 @@ Migration directory: migrations/
 
 
 <p>One you have written your seeder class, you may use the command:</p>
-<div class="code"><pre><span></span>php craftsman db:seed &lt;name&gt;
+<div class="codehilite"><pre><span></span>php craftsman db:seed &lt;name&gt;
 </pre></div>
 
 
 <p>Check the <a href="https://codeigniter.com/user_guide/query_builder.html">Query Builder Class</a> to manually insert data.</p>
-<h2 id="generators">Generators<a class="headerlink" href="#generators" title="Permanent link">#</a></h2>
+<h2 id="generators">Generators<a class="headerlink" href="#generators" title="Permanent link">&para;</a></h2>
 <p>Craftsman provides a variety of generators to speed up your development process.</p>
-<h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permanent link">#</a></h3>
+<h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permanent link">&para;</a></h3>
 <p>Generate a controller with the command:</p>
-<div class="code"><pre><span></span>php craftsman generate:controller &lt;name&gt;
+<div class="codehilite"><pre><span></span>php craftsman generate:controller &lt;name&gt;
 </pre></div>
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">CI_Controller</span>
 <span class="p">{</span>
@@ -513,14 +640,14 @@ Migration directory: migrations/
 </pre></div>
 
 
-<h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">#</a></h3>
+<h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
 <p>Generate a model with the command:</p>
-<div class="code"><pre><span></span>php craftsman generate:model &lt;name&gt;
+<div class="codehilite"><pre><span></span>php craftsman generate:model &lt;name&gt;
 </pre></div>
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">class</span> <span class="nc">Foo_model</span> <span class="k">extends</span> <span class="nx">CI_Model</span>
 <span class="p">{</span>
@@ -537,9 +664,9 @@ Migration directory: migrations/
 </pre></div>
 
 
-<h3 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">#</a></h3>
+<h3 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">&para;</a></h3>
 <p>Generate a migration with the command:</p>
-<div class="code"><pre><span></span>php craftsman generate:migration &lt;name&gt;
+<div class="codehilite"><pre><span></span>php craftsman generate:migration &lt;name&gt;
 </pre></div>
 
 
@@ -548,14 +675,14 @@ Migration directory: migrations/
 <li>001_add_blog.php (sequential)</li>
 <li>20121031100537_add_blog.php (timestamp)    </li>
 </ul>
-<h4 id="name-prefixes">Name prefixes<a class="headerlink" href="#name-prefixes" title="Permanent link">#</a></h4>
+<p><strong>Name prefixes</strong></p>
 <p>Use the prefix <code>create_</code> or <code>modify_</code> if you want to create a migration with the appropriate <code>add_column</code> and <code>update_column</code> statements. Here's an example:</p>
-<div class="code"><pre><span></span>php craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
+<div class="codehilite"><pre><span></span>php craftsman generate:migration create_users firstname:varchar lastname:varchar email:varchar active:smallint
 </pre></div>
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">class</span> <span class="nc">Migration_create_users</span> <span class="k">extends</span> <span class="nx">CI_Migration</span> <span class="p">{</span>
 
@@ -616,14 +743,14 @@ Migration directory: migrations/
 
 
 <p>Now it's your turn to give the finishing touches before running this scheme. Check the <a href="https://codeigniter.com/user_guide/database/forge.html">Database Forge documentation</a> for more information about Codeigniter Migrations.</p>
-<h3 id="seeders_1">Seeders<a class="headerlink" href="#seeders_1" title="Permanent link">#</a></h3>
+<h3 id="seeders_1">Seeders<a class="headerlink" href="#seeders_1" title="Permanent link">&para;</a></h3>
 <p>Generate a seeder with the command:</p>
-<div class="code"><pre><span></span>php craftsman generate:seeder &lt;name&gt;
+<div class="codehilite"><pre><span></span>php craftsman generate:seeder &lt;name&gt;
 </pre></div>
 
 
 <p>Output:</p>
-<div class="code"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Craftsman\Database\Seeder</span><span class="p">;</span>
 
@@ -647,82 +774,92 @@ Migration directory: migrations/
 
 <p>All seed classes are stored by default in your <code>path/to/application/seeders</code> folder.</p>
 <hr />
-          <aside class="copyright" role="note">
-            
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> Craftsman is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC SA License</a>.
- &ndash;
-            
-            Documentation built with
-            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
-            using the
-            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
-              Material
-            </a>
-            theme.
-          </aside>
-          
-            <footer class="footer">
               
-  <nav class="pagination" aria-label="Footer">
-    <div class="previous">
+            </article>
+          </div>
+        </div>
+      </main>
       
-        <a href="../usage/" title="Usage">
-          <span class="direction">
-            Previous
-          </span>
-          <div class="page">
-            <div class="button button-previous" role="button" aria-label="Previous">
-              <i class="icon icon-back"></i>
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../usage/" title="Usage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="stretch">
-              <div class="title">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
                 Usage
-              </div>
+              </span>
             </div>
-          </div>
-        </a>
-      
-    </div>
-    <div class="next">
-      
-        <a href="../extra/" title="Resources">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
+          </a>
+        
+        
+          <a href="../extra/" title="Resources" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
                 Resources
-              </div>
+              </span>
             </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
             </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> Craftsman is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC SA License</a>.
+
           </div>
-        </a>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/davidsosavaldes" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/itsdsv" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://mx.linkedin.com/in/david-sosa-valdes" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
       
     </div>
-  </nav>
-
-            </footer>
-          
-        </div>
-      </article>
-      <div class="results" role="status" aria-live="polite">
-        <div class="scrollable">
-          <div class="wrapper">
-            <div class="meta"></div>
-            <div class="list"></div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script>
-      var base_url = '..';
-      var repo_id  = 'CI-Craftsman/CLI';
-    </script>
-    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+  </div>
+</footer>
+      
+    </div>
     
+      <script src="../assets/javascripts/application-f7ac33b6fb.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
     
   </body>
 </html>
