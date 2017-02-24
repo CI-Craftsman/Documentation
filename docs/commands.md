@@ -6,10 +6,6 @@ Craftsman comes with a built in [REPL command](http://psysh.org)  that makes it 
 
 This will bootstrap your application and start an interactive console. At this point you can interact with your application code and execute queries using your application’s models. To quit you can use `CTRL-C` or by typing `exit`.
 
-Here's a little demo that runs a database [Migration](#migrations), next runs a [Seed](#seeders) and finally use a simple Model to query all the information stored:
-
-<script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
-
 ---
 
 ## Serve
@@ -66,17 +62,17 @@ Below the information table, there is a legend witch indicates the action to tak
 
     ! [NOTE] The Database is not up-to-date with the latest changes, run:'migrate:latest' to update them.
 
-### Running migrations
+### Runners
 
 Each migration command shows relevant information about the db scheme changes by default. Here's a list of possible options.
 
-**Latest**
+#### Latest
 
 Allows you to migrate the latest version, the migration class will use the very newest migration found in the *Filesystem*.
 
 	php craftsman migrate:latest
 
-**Version**
+#### Version
 
 Allows you to roll back changes or step forwards pro-grammatically to specific versions.
 
@@ -86,15 +82,19 @@ Allows you to roll back changes or step forwards pro-grammatically to specific v
 
 Allows you to quickly roll back and forth through the history of the migration schema, so as to work with desired version. Here's a list of possible options.
 
-#### Rollback the last migration
+#### Previous
 
 	php craftsman migrate:rollback
 
-#### Rollback all migrations
+#### Reset
+
+Rollback all migrations.
 
 	php craftsman migrate:reset
 
-#### Rollback all migrations and run them all again
+#### Refresh
+
+Rollback all migrations and run them all again.
 
 	php craftsman migrate:refresh
 
@@ -112,7 +112,7 @@ A seeder class only contains the `run()` method by default, this method is calle
 
 use Craftsman\Database\Seeder;
 
-class Foo extends Seeder implements \Craftsman\Interfaces\Seeder
+class Foo extends Seeder
 {
   private $table = '<table_name>';
 
@@ -258,7 +258,7 @@ Regardless of which style you choose to use, the generator command will prefix y
 * 001_add_blog.php (sequential)
 * 20121031100537_add_blog.php (timestamp)    
 
-#### Name prefixes
+**Name prefixes**
 
 Use the prefix `create_` or `modify_` if you want to create a migration with the appropriate `add_column` and `update_column` statements. Here's an example:
 

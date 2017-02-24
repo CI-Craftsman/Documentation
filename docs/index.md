@@ -15,10 +15,12 @@ Built on top of great technology.
 
 ## Demo
 
-<div class="embed-responsive embed-responsive-16by9">
-  <div class="embed-responsive-item">
-    <script type="text/javascript" src="https://asciinema.org/a/95481.js" id="asciicast-95481" async></script>
-  </div>
-</div>
+Here's a little demo of the [Console Command](commands/#console) that runs a [DB Migration](commands/#migrations), next runs a [DB Seed](commands/#seeders) and finally use a simple Model to query all the information stored:
+
+<script type="text/javascript" src="https://asciinema.org/a/96649.js" id="asciicast-96649" async></script>
+
+Another demo with [Generators](commands/#generators):
+
+<script type="text/javascript" src="https://asciinema.org/a/95481.js" id="asciicast-95481" async></script>
 
 ---

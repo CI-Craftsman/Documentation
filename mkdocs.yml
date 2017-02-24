@@ -5,7 +5,7 @@ site_author: David Sosa Valdes
 site_url: https://ci-craftsman.github.io/documentation/
 
 # Repository
-repo_name: GitHub
+repo_name: Craftsman
 repo_url: https://github.com/CI-Craftsman/CLI
 
 # Copyright
@@ -16,25 +16,19 @@ theme: material
 
 # Options
 extra:
-  logo: 'images/ic_launcher.png'
-  version: 4.2.3
-  github:
-    download_release: true
-  author:
-    github: davidsosavaldes
-    twitter: itsdsv
+  logo: 'images/ic_cr.png'
   palette:
     primary: 'teal'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
-
-# Extensions
-markdown_extensions:
-  - codehilite(css_class=code)
-  - admonition
-  - toc:
-      permalink: '#'
+  social:
+    - type: 'github'
+      link: 'https://github.com/davidsosavaldes'
+    - type: 'twitter'
+      link: 'https://twitter.com/itsdsv'
+    - type: 'linkedin'
+      link: 'https://mx.linkedin.com/in/david-sosa-valdes'
 
 # Page tree
 pages:
@@ -44,3 +38,11 @@ pages:
   - Commands: commands.md
   - Resources: extra.md
   - Contributions: contributions.md
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite(guess_lang=false)
+  - footnotes
+  - meta
+  - toc(permalink=true)
